@@ -33,6 +33,8 @@ Future<void> main() async {
               socket.add("Unsupported message type: ${message.runtimeType}");
           }
         }
+
+        await socket.close();
       });
     });
 
