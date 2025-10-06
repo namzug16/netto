@@ -219,7 +219,7 @@ class CtxRequestBody {
     return vals == null ? const <String>[] : List<String>.from(vals);
   }
 
-  /// Returns the first uploaded file whose filename matches [name].
+  /// Returns the first uploaded file whose field name matches [name].
   ///  - `null` if missing.
   ///  - 415 if not multipart.
   Future<UploadedFile?> formFile(String name, {MultipartLimits? limits}) async {
@@ -228,10 +228,10 @@ class CtxRequestBody {
       limits: limits,
       requireMultipart: true,
     );
-    return data.files.firstWhereOrNull((e) => e.filename == name);
+    return data.files.firstWhereOrNull((e) => e.fieldName == name);
   }
 
-  /// Returns every uploaded file whose filename matches [name].
+  /// Returns every uploaded file whose field name matches [name].
   Future<List<UploadedFile>> formFiles(
     String name, {
     MultipartLimits? limits,
@@ -241,7 +241,7 @@ class CtxRequestBody {
       limits: limits,
       requireMultipart: true,
     );
-    return data.files.where((e) => e.filename == name).toList();
+    return data.files.where((e) => e.fieldName == name).toList();
   }
 
   /// Returns all fields (merged); for urlencoded there are no files.
