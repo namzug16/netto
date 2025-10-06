@@ -105,6 +105,8 @@ class CtxRequestBody {
 
     final transformer = MimeMultipartTransformer(boundary);
 
+    final tmpDir = await Directory.systemTemp.createTemp("netto_upload_");
+
     await for (final part in transformer.bind(sourceStream)) {
       final headers = <String, String>{};
       for (final entry in part.headers.entries) {
@@ -172,8 +174,7 @@ class CtxRequestBody {
         throw HttpException(413, "Too many uploaded files.");
       }
 
-      final tmpDir = await Directory.systemTemp.createTemp('netto_upload_');
-      final tmpFile = File('${tmpDir.path}/part_$fileCount');
+      final tmpFile = File("${tmpDir.path}/part_$fileCount");
       await tmpFile.create();
       int written = 0;
       final sink = tmpFile.openWrite();
