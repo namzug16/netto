@@ -155,17 +155,17 @@ class Netto {
 
   /// Resolves head-specific middleware adjustments when necessary.
   Middleware? _resolveMiddleware(Ctx ctx, Middleware? middleware) {
+    final isHead = ctx.request.method.toUpperCase() == "HEAD";
+
     if (middleware == null) {
-      return null;
+      return isHead ? headResponseMiddleware() : null;
     }
 
-    final effectiveMiddleware = middleware;
-
-    if (ctx.request.method.toUpperCase() == "HEAD") {
-      return headResponseMiddleware().addMiddleware(effectiveMiddleware);
+    if (isHead) {
+      return headResponseMiddleware().addMiddleware(middleware);
     }
 
-    return effectiveMiddleware;
+    return middleware;
   }
 
   /// Wraps handlers to surface errors through the configured error handler.
