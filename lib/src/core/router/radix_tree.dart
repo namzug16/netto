@@ -135,7 +135,7 @@ class RadixTree<T> {
 
   /// Finds the deepest literal match for [path] ignoring parameters.
   RadixResult<T>? getLongestLiteralMatch(String path) {
-    final segments = _splitPath(path);
+    final segments = _splitPath(normalizePath(path));
     return _getLongestLiteral(_root, segments);
   }
 
