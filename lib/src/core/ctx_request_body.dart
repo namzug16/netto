@@ -172,8 +172,9 @@ class CtxRequestBody {
         throw HttpException(413, "Too many uploaded files.");
       }
 
-      final tmpPath = "${Directory.systemTemp.path}/netto_upload_${DateTime.now().microsecondsSinceEpoch}_$fileCount";
-      final tmpFile = await File(tmpPath).create();
+      final tmpDir = await Directory.systemTemp.createTemp('netto_upload_');
+      final tmpFile = File('${tmpDir.path}/part_$fileCount');
+      await tmpFile.create();
       int written = 0;
       final sink = tmpFile.openWrite();
       try {
