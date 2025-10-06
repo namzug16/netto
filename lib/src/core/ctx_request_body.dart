@@ -113,7 +113,15 @@ class CtxRequestBody {
 
       final disp = headers["content-disposition"];
       if (disp == null) {
-        await _drain(part);
+        await _drain(
+          part,
+          onChunk: (len) {
+            totalBytes += len;
+            if (lmts.maxTotalSize != null && totalBytes > lmts.maxTotalSize!) {
+              throw HttpException(413, "Multipart total size exceeded.");
+            }
+          },
+        );
         continue;
       }
 
@@ -123,7 +131,15 @@ class CtxRequestBody {
       final partCt = _parseContentType(headers["content-type"]);
 
       if (fieldName == null || fieldName.isEmpty) {
-        await _drain(part);
+        await _drain(
+          part,
+          onChunk: (len) {
+            totalBytes += len;
+            if (lmts.maxTotalSize != null && totalBytes > lmts.maxTotalSize!) {
+              throw HttpException(413, "Multipart total size exceeded.");
+            }
+          },
+        );
         continue;
       }
 
@@ -437,6 +453,8 @@ ContentType? _parseContentType(String? raw) {
 }
 
 /// Consumes and discards the remaining bytes of [stream].
-Future<void> _drain(Stream<List<int>> stream) async {
-  await stream.forEach((_) {});
+Future<void> _drain(Stream<List<int>> stream, {void Function(int chunkLength)? onChunk}) async {
+  await for (final chunk in stream) {
+    onChunk?.call(chunk.length);
+  }
 }
