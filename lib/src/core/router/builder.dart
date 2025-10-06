@@ -63,7 +63,7 @@ abstract class Builder {
       // wrong, thus, we add a default implementation that discards the body.
       rTree.insert("HEAD$route", RouteNode(handler, this));
     }
-    rTree.insert("$verb$route", RouteNode(handler, this));
+    rTree.insert("$v$route", RouteNode(handler, this));
   }
 
   /// Convenience for responding with a 301 redirect from [route] to [redirect].
