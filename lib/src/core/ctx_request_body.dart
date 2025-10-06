@@ -393,8 +393,15 @@ class CtxRequestBody {
 
     // Not a known form content-type.
     // If best-effort is allowed and the body is empty, expose empty form.
-    final isEmpty = req.contentLength == 0;
+    final isEmpty = req.contentLength == 0 || req.contentLength == -1;
     if (allowBestEffort && isEmpty) {
+      // For unknown length (-1), verify by attempting to read
+      if (req.contentLength == -1) {
+        final hasData = await _request.isEmpty;
+        if (!hasData) {
+          throw HttpException(415, "Unsupported Content-Type for form parsing");
+        }
+      }
       final data = FormData(fields: const {}, files: []);
       _formCache[req] = _FormCache(data, false, null);
       if (requireMultipart) {

@@ -109,7 +109,7 @@ void main() {
       final router = Router();
       final calls = <String>[];
       router.use((next) async {
-        return (ctx) async {
+        return (Ctx ctx) async {
           calls.add("middleware-before");
           await Future.sync(() => next(ctx));
           calls.add("middleware-after");
@@ -134,7 +134,7 @@ void main() {
       final router = Router();
       final calls = <String>[];
       router.use((next) async {
-        return (ctx) async {
+        return (Ctx ctx) async {
           calls.add("middleware-before");
           await Future.sync(() => next(ctx));
           calls.add("middleware-after");
