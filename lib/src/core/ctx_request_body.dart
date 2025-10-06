@@ -62,7 +62,7 @@ class CtxRequestBody {
   /// application/x-www-form-urlencoded → field → values.
   Future<Map<String, List<String>>> formUrlencoded() async {
     final ctype = _request.headers.contentType;
-    if (ctype != null && !(ctype.mimeType.toLowerCase() == "application/x-www-form-urlencoded")) {
+    if (ctype == null || ctype.mimeType.toLowerCase() != "application/x-www-form-urlencoded") {
       throw HttpException(415, "Unsupported media type for formUrlencoded.");
     }
 
