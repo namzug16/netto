@@ -9,12 +9,11 @@
 
 A minimal, flexible, composable, and neat web framework for Dart.
 ```
-
-Netto is an experimental web framework whose goal is to give you the lightest
+Netto is a web framework whose goal is to give you the lightest
 possible foundation for building feature-rich web servers and applications. It
-sticks closely to the `dart:io` library, adding zero hard wrappers,
-no compile-time header type safety, and no file system based
-conventions. Inspired by the ergonomics of [Echo](https://echo.labstack.com/) in
+sticks closely to the `dart:io` library, adding zero hard wrappers, 
+and no file system based routing conventions.
+Inspired by the ergonomics of [Echo](https://echo.labstack.com/) in
 the Go ecosystem, Netto keeps out of your way so you can structure your server
 however you want.
 
@@ -55,9 +54,53 @@ Add more routes by calling `get`, `post`, or group them with `group`.
 Middlewares run in the order they are registered (globally scoped or group scoped), so you can build your own stack
 for logging, authorization, caching, and beyond.
 
+
+### Example using Htmdart and Htmx
+
+```dart
+import "dart:io";
+
+import "package:htmdart/htmdart.dart";
+import "package:netto/netto.dart";
+
+Future<void> main() async {
+  final app = Netto()
+    ..get(
+      "/",
+      (ctx) => ctx.response.html(
+        html([
+          head([
+            script([
+              $src("https://unpkg.com/htmx.org@2.0.4"),
+            ]),
+          ]),
+          body([
+            h1(["Hello from htmdart + Netto".t]),
+            button([
+              $hx.post("/clicked"),
+              "Click me".t,
+            ]),
+          ]),
+        ]).toHtml(),
+      ),
+    )
+    ..post(
+      "/clicked",
+      (ctx) => ctx.response.html(
+        div([
+          $hx.swapOob.yes,
+          "Button clicked!".t,
+        ]).toHtml(),
+      ),
+    );
+
+  await app.serve(InternetAddress.anyIPv4, 8080);
+}
+```
+
 ## Next steps
 
 This README is intentionally light. Detailed guides, patterns, and API
 explanations will live in the documentation site we are building next. Until
-then, explore the examples in the `example/` directory and experiment with
+then, explore the examples in the [examples/](https://github.com/namzug16/netto/tree/master/example) directory and experiment with
 Netto to see how it fits your projects.
