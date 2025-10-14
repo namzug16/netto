@@ -78,8 +78,10 @@ Future<void> main() async {
             h1(["Hello from htmdart + Netto".t]),
             button([
               $hx.post("/clicked"),
+              $hx.target("#container"),
               "Click me".t,
             ]),
+            div([$id("container")]),
           ]),
         ]).toHtml(),
       ),
@@ -88,8 +90,8 @@ Future<void> main() async {
       "/clicked",
       (ctx) => ctx.response.html(
         div([
-          $hx.swapOob.yes,
-          "Button clicked!".t,
+          $id("container"),
+          "Button clicked at ${DateTime.now()}".t,
         ]).toHtml(),
       ),
     );
