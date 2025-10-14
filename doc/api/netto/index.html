@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="netto library API docs, for the Dart programming language.">
+  <title>netto library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">netto</a></li>
+    <li class="self-crumb">netto.dart</li>
+  </ol>
+  <div class="self-name">netto</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar=""
+    data-below-sidebar="netto&#47;netto-library-sidebar.html">
+  
+    <div>
+      
+
+      <h1>
+        <span class="kind-library">netto</span>
+        library 
+ 
+
+      </h1>
+    </div>
+
+    
+<section class="desc markdown">
+  <p>Netto</p>
+</section>
+
+
+    <section class="summary offset-anchor" id="classes">
+      <h2>Classes</h2>
+      <dl>
+          <dt id="Builder">
+  <span class="name "><a href="../netto/Builder-class.html">Builder</a></span> 
+
+</dt>
+<dd>
+  Base builder abstraction that wires routes into the shared radix tree.
+</dd>
+
+          <dt id="Ctx">
+  <span class="name "><a href="../netto/Ctx-class.html">Ctx</a></span> 
+
+</dt>
+<dd>
+  Request context shared between middleware and handlers.
+</dd>
+
+          <dt id="CtxRequest">
+  <span class="name "><a href="../netto/CtxRequest-class.html">CtxRequest</a></span> 
+
+</dt>
+<dd>
+  Wrapper around <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a> offering convenient access to request data
+and the shared contextual extras map.
+</dd>
+
+          <dt id="CtxResponse">
+  <span class="name "><a href="../netto/CtxResponse-class.html">CtxResponse</a></span> 
+
+</dt>
+<dd>
+  Response helper that tracks outgoing data and exposes the shared extras
+map used by middleware and handlers.
+</dd>
+
+          <dt id="FormData">
+  <span class="name "><a href="../netto/FormData-class.html">FormData</a></span> 
+
+</dt>
+<dd>
+  Aggregated multipart form result.
+</dd>
+
+          <dt id="Group">
+  <span class="name "><a href="../netto/Group-class.html">Group</a></span> 
+
+</dt>
+<dd>
+  Route builder that scopes nested routes under a shared prefix and middleware.
+</dd>
+
+          <dt id="LoggerConfig">
+  <span class="name "><a href="../netto/LoggerConfig-class.html">LoggerConfig</a></span> 
+
+</dt>
+<dd>
+  Configuration object for the structured logging middleware.
+</dd>
+
+          <dt id="LoggerEvent">
+  <span class="name "><a href="../netto/LoggerEvent-class.html">LoggerEvent</a></span> 
+
+</dt>
+<dd>
+  Immutable snapshot of request/response metadata passed to formatting hooks.
+</dd>
+
+          <dt id="MultipartLimits">
+  <span class="name "><a href="../netto/MultipartLimits-class.html">MultipartLimits</a></span> 
+
+</dt>
+<dd>
+  Limits for multipart processing. All fields are optional.
+</dd>
+
+          <dt id="Netto">
+  <span class="name "><a href="../netto/Netto-class.html">Netto</a></span> 
+
+</dt>
+<dd>
+  Primary entry-point combining router, middleware, and server integration.
+</dd>
+
+          <dt id="RadixNode">
+  <span class="name "><a href="../netto/RadixNode-class.html">RadixNode</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Node used by the radix tree to store path segments and route metadata.
+</dd>
+
+          <dt id="RadixResult">
+  <span class="name "><a href="../netto/RadixResult-class.html">RadixResult</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Result returned when resolving a path through the radix tree.
+</dd>
+
+          <dt id="RadixTree">
+  <span class="name "><a href="../netto/RadixTree-class.html">RadixTree</a><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  Lightweight radix tree optimized for HTTP route lookup.
+</dd>
+
+          <dt id="RouteNode">
+  <span class="name "><a href="../netto/RouteNode-class.html">RouteNode</a></span> 
+
+</dt>
+<dd>
+  Holds the handler and middleware context for a concrete route.
+</dd>
+
+          <dt id="Router">
+  <span class="name "><a href="../netto/Router-class.html">Router</a></span> 
+
+</dt>
+<dd>
+  HTTP router based on a radix tree with middleware support.
+</dd>
+
+          <dt id="UploadedFile">
+  <span class="name "><a href="../netto/UploadedFile-class.html">UploadedFile</a></span> 
+
+</dt>
+<dd>
+  A streamed uploaded file backed by a temporary file on disk.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+      <dl>
+          <dt id="MiddlewareExtensions">
+  <span class="name "><a href="../netto/MiddlewareExtensions.html">MiddlewareExtensions</a></span>
+  on <a href="../netto/Middleware.html">Middleware</a>
+  
+
+</dt>
+<dd>
+  Extensions on <a href="../netto/Middleware.html">Middleware</a> to aid in composing <a href="../netto/Middleware.html">Middleware</a> and <a href="../netto/Handler.html">Handler</a>s.
+</dd>
+
+      </dl>
+    </section>
+
+
+
+    <section class="summary offset-anchor" id="functions">
+      <h2>Functions</h2>
+      <dl class="callables">
+          <dt id="catchTopLevelErrors" class="callable">
+  <span class="name"><a href="../netto/catchTopLevelErrors.html">catchTopLevelErrors</a></span><span class="signature">(<wbr><span class="parameter" id="catchTopLevelErrors-param-callback"><span class="type-annotation">void</span> <span class="parameter-name">callback</span>(), </span><span class="parameter" id="catchTopLevelErrors-param-onError"><span class="type-annotation">void</span> <span class="parameter-name">onError</span>(<span class="parameter" id="param-error"><span class="type-annotation">dynamic</span> <span class="parameter-name">error</span>, </span><span class="parameter" id="param-"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/StackTrace-class.html">StackTrace</a></span></span>)</span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Runs <code>callback</code> while ensuring asynchronous errors are reported via <code>onError</code>.
+  
+
+</dd>
+
+          <dt id="handleRequest" class="callable">
+  <span class="name"><a href="../netto/handleRequest.html">handleRequest</a></span><span class="signature">(<wbr><span class="parameter" id="handleRequest-param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">request</span>, </span><span class="parameter" id="handleRequest-param-handler"><span class="type-annotation"><a href="../netto/Handler.html">Handler</a></span> <span class="parameter-name">handler</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Wraps an incoming <code>request</code> with <a href="../netto/Ctx-class.html">Ctx</a> and executes the application <code>handler</code>.
+  
+
+</dd>
+
+          <dt id="logger" class="callable">
+  <span class="name"><a href="../netto/logger.html">logger</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="../netto/Middleware.html">Middleware</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns middleware that logs request and response information.
+  
+
+</dd>
+
+          <dt id="loggerWithConfig" class="callable">
+  <span class="name"><a href="../netto/loggerWithConfig.html">loggerWithConfig</a></span><span class="signature">(<wbr><span class="parameter" id="loggerWithConfig-param-config"><span class="type-annotation"><a href="../netto/LoggerConfig-class.html">LoggerConfig</a></span> <span class="parameter-name">config</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../netto/Middleware.html">Middleware</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns middleware that logs request and response information using <code>config</code>.
+  
+
+</dd>
+
+          <dt id="serve" class="callable">
+  <span class="name"><a href="../netto/serve.html">serve</a></span><span class="signature">(<wbr><span class="parameter" id="serve-param-handler"><span class="type-annotation"><a href="../netto/Handler.html">Handler</a></span> <span class="parameter-name">handler</span>, </span><span class="parameter" id="serve-param-address"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">address</span>, </span><span class="parameter" id="serve-param-port"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">port</span>, {</span><span class="parameter" id="serve-param-securityContext"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/SecurityContext-class.html">SecurityContext</a>?</span> <span class="parameter-name">securityContext</span>, </span><span class="parameter" id="serve-param-backlog"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">backlog</span> = <span class="default-value">0</span>, </span><span class="parameter" id="serve-param-shared"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">shared</span> = <span class="default-value">false</span>, </span><span class="parameter" id="serve-param-suppressBanner"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">suppressBanner</span> = <span class="default-value">false</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-io/HttpServer-class.html">HttpServer</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Starts an <a href="https://api.flutter.dev/flutter/dart-io/HttpServer-class.html">HttpServer</a> wired to the provided <code>handler</code>.
+  
+
+</dd>
+
+          <dt id="serveRequests" class="callable">
+  <span class="name"><a href="../netto/serveRequests.html">serveRequests</a></span><span class="signature">(<wbr><span class="parameter" id="serveRequests-param-requests"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Stream-class.html">Stream</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span>&gt;</span></span> <span class="parameter-name">requests</span>, </span><span class="parameter" id="serveRequests-param-handler"><span class="type-annotation"><a href="../netto/Handler.html">Handler</a></span> <span class="parameter-name">handler</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Consumes the stream of <code>requests</code> and forwards each to <code>handler</code>.
+  
+
+</dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="CustomTagCallback" class="callable">
+    <span class="name"><a href="../netto/CustomTagCallback.html">CustomTagCallback</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>? Function<span class="signature">(<span class="parameter" id="param-event"><span class="type-annotation"><a href="../netto/LoggerEvent-class.html">LoggerEvent</a></span> <span class="parameter-name">event</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Produces a custom tag value for the serialized log output.
+    
+
+  </dd>
+
+          
+  <dt id="ErrorHandler" class="callable">
+    <span class="name"><a href="../netto/ErrorHandler.html">ErrorHandler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-ctx"><span class="type-annotation"><a href="../netto/Ctx-class.html">Ctx</a></span> <span class="parameter-name">ctx</span>, </span><span class="parameter" id="param-error"><span class="type-annotation"><a href="../netto/HttpException-class.html">HttpException</a></span> <span class="parameter-name">error</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Signature for error handlers triggered by uncaught <a href="../netto/HttpException-class.html">HttpException</a>s.
+    
+
+  </dd>
+
+          
+  <dt id="Handler" class="callable">
+    <span class="name"><a href="../netto/Handler.html">Handler</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-ctx"><span class="type-annotation"><a href="../netto/Ctx-class.html">Ctx</a></span> <span class="parameter-name">ctx</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Signature for route handlers.
+    
+
+  </dd>
+
+          
+  <dt id="LogSkipper" class="callable">
+    <span class="name"><a href="../netto/LogSkipper.html">LogSkipper</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a> Function<span class="signature">(<span class="parameter" id="param-ctx"><span class="type-annotation"><a href="../netto/Ctx-class.html">Ctx</a></span> <span class="parameter-name">ctx</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Callback that decides whether logging should be skipped for the request.
+    
+
+  </dd>
+
+          
+  <dt id="Middleware" class="callable">
+    <span class="name"><a href="../netto/Middleware.html">Middleware</a></span><span class="signature">
+      <span class="returntype parameter">= <a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../netto/Handler.html">Handler</a></span>&gt;</span> Function<span class="signature">(<span class="parameter" id="param-next"><span class="type-annotation"><a href="../netto/Handler.html">Handler</a></span> <span class="parameter-name">next</span></span>)</span></span>
+    </span>
+    
+
+  </dt>
+  <dd>
+    Signature for middleware that transforms a downstream <a href="../netto/Handler.html">Handler</a>.
+    
+
+  </dd>
+
+      </dl>
+    </section>
+
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+      <dl>
+          <dt id="HijackException">
+  <span class="name "><a href="../netto/HijackException-class.html">HijackException</a></span> 
+
+</dt>
+<dd>
+  Internal sentinel exception thrown once a request has been hijacked.
+</dd>
+
+          <dt id="HttpException">
+  <span class="name "><a href="../netto/HttpException-class.html">HttpException</a></span> 
+
+</dt>
+<dd>
+  Minimal HTTP exception hierarchy with common helpers.
+</dd>
+
+          <dt id="HttpExceptionBadRequest">
+  <span class="name "><a href="../netto/HttpExceptionBadRequest-class.html">HttpExceptionBadRequest</a></span> 
+
+</dt>
+<dd>
+  400 Bad Request.
+</dd>
+
+          <dt id="HttpExceptionConflict">
+  <span class="name "><a href="../netto/HttpExceptionConflict-class.html">HttpExceptionConflict</a></span> 
+
+</dt>
+<dd>
+  409 Conflict.
+</dd>
+
+          <dt id="HttpExceptionForbidden">
+  <span class="name "><a href="../netto/HttpExceptionForbidden-class.html">HttpExceptionForbidden</a></span> 
+
+</dt>
+<dd>
+  403 Forbidden.
+</dd>
+
+          <dt id="HttpExceptionInternalServerError">
+  <span class="name "><a href="../netto/HttpExceptionInternalServerError-class.html">HttpExceptionInternalServerError</a></span> 
+
+</dt>
+<dd>
+  500 Internal Server Error.
+</dd>
+
+          <dt id="HttpExceptionMethodNotAllowed">
+  <span class="name "><a href="../netto/HttpExceptionMethodNotAllowed-class.html">HttpExceptionMethodNotAllowed</a></span> 
+
+</dt>
+<dd>
+  405 Method Not Allowed.
+</dd>
+
+          <dt id="HttpExceptionNotFound">
+  <span class="name "><a href="../netto/HttpExceptionNotFound-class.html">HttpExceptionNotFound</a></span> 
+
+</dt>
+<dd>
+  404 Not Found.
+</dd>
+
+          <dt id="HttpExceptionPayloadTooLarge">
+  <span class="name "><a href="../netto/HttpExceptionPayloadTooLarge-class.html">HttpExceptionPayloadTooLarge</a></span> 
+
+</dt>
+<dd>
+  413 Payload Too Large.
+</dd>
+
+          <dt id="HttpExceptionUnauthorized">
+  <span class="name "><a href="../netto/HttpExceptionUnauthorized-class.html">HttpExceptionUnauthorized</a></span> 
+
+</dt>
+<dd>
+  401 Unauthorized.
+</dd>
+
+          <dt id="HttpExceptionUnprocessableEntity">
+  <span class="name "><a href="../netto/HttpExceptionUnprocessableEntity-class.html">HttpExceptionUnprocessableEntity</a></span> 
+
+</dt>
+<dd>
+  422 Unprocessable Entity.
+</dd>
+
+          <dt id="HttpExceptionUnsupportedMediaType">
+  <span class="name "><a href="../netto/HttpExceptionUnsupportedMediaType-class.html">HttpExceptionUnsupportedMediaType</a></span> 
+
+</dt>
+<dd>
+  415 Unsupported Media Type.
+</dd>
+
+          <dt id="HttpExceptionWithStatus">
+  <span class="name "><a href="../netto/HttpExceptionWithStatus-class.html">HttpExceptionWithStatus</a></span> 
+
+</dt>
+<dd>
+  A generic <a href="../netto/HttpException-class.html">HttpException</a> for an arbitrary status code.
+</dd>
+
+      </dl>
+    </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">netto</a></li>
+    <li class="self-crumb">netto.dart</li>
+</ol>
+
+    <h5><span class="package-name">netto</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="../netto/">netto</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>netto library</h5>
+  </div><!--/sidebar-offcanvas-right-->
+</main>
+<footer>
+  <span class="no-break">
+    netto
+      0.1.2
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the CtxRequest class from the netto library, for the Dart programming language.">
+  <title>CtxRequest class - netto library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">netto</a></li>
+    <li><a href="../netto/">netto.dart</a></li>
+    <li class="self-crumb">CtxRequest class</li>
+  </ol>
+  <div class="self-name">CtxRequest</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="netto&#47;netto-library-sidebar.html"
+    data-below-sidebar="netto&#47;CtxRequest-class-sidebar.html">
+    <div>
+<h1><span class="kind-class">CtxRequest</span> class 
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Wrapper around <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a> offering convenient access to request data
+and the shared contextual extras map.</p>
+</section>
+
+
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="CtxRequest.new" class="callable">
+          <span class="name"><a href="../netto/CtxRequest/CtxRequest.html">CtxRequest.new</a></span><span class="signature">(<span class="parameter" id="-param-_request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">_request</span>, {</span><span class="parameter" id="-param-enableHijack"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableHijack</span> = <span class="default-value">true</span>, </span><span class="parameter" id="-param-extras"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">extras</span></span>})</span>
+        </dt>
+        <dd>
+          Creates a wrapper around the incoming <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a>.
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="body" class="property">
+  <span class="name"><a href="../netto/CtxRequest/body.html">body</a></span>
+  <span class="signature">&#8596; CtxRequestBody</span>
+  
+
+</dt>
+<dd>
+  Helper exposing lazy parsing utilities for the request body.
+  <div class="features"><span class="feature">late</span><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="canHijack" class="property">
+  <span class="name"><a href="../netto/CtxRequest/canHijack.html">canHijack</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Whether this request can currently be hijacked.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="contentLength" class="property">
+  <span class="name"><a href="../netto/CtxRequest/contentLength.html">contentLength</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Declared content length of the request, if known.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="contentType" class="property">
+  <span class="name"><a href="../netto/CtxRequest/contentType.html">contentType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-io/ContentType-class.html">ContentType</a>?</span>
+  
+
+</dt>
+<dd>
+  Parsed content type header.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="cookies" class="property">
+  <span class="name"><a href="../netto/CtxRequest/cookies.html">cookies</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Parsed cookies (first value wins on duplicate names).
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="extras" class="property">
+  <span class="name"><a href="../netto/CtxRequest/extras.html">extras</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Shared extras map. Prefer using helpers such as <code>set</code> and <code>get</code> to
+interact with it.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="headers" class="property">
+  <span class="name"><a href="../netto/CtxRequest/headers.html">headers</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Lowercased header names; values are unmodifiable lists.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="host" class="property">
+  <span class="name"><a href="../netto/CtxRequest/host.html">host</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  
+
+</dt>
+<dd>
+  Value of the <code>Host</code> header, if provided.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="isFormUrlencoded" class="property">
+  <span class="name"><a href="../netto/CtxRequest/isFormUrlencoded.html">isFormUrlencoded</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="isHijacked" class="property">
+  <span class="name"><a href="../netto/CtxRequest/isHijacked.html">isHijacked</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Whether the request has already been hijacked.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="isHttps" class="property">
+  <span class="name"><a href="../netto/CtxRequest/isHttps.html">isHttps</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  Whether the request is served over HTTPS (directly or inferred).
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="isJson" class="property">
+  <span class="name"><a href="../netto/CtxRequest/isJson.html">isJson</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="isMultipart" class="property">
+  <span class="name"><a href="../netto/CtxRequest/isMultipart.html">isMultipart</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd>
+  
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="method" class="property">
+  <span class="name"><a href="../netto/CtxRequest/method.html">method</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  HTTP method of the incoming request.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="path" class="property">
+  <span class="name"><a href="../netto/CtxRequest/path.html">path</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Path component of the request URI.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="pathParameters" class="property">
+  <span class="name"><a href="../netto/CtxRequest/pathParameters.html">pathParameters</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Populated by the router via <code>updatePathParameters</code>.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="queryParameters" class="property">
+  <span class="name"><a href="../netto/CtxRequest/queryParameters.html">queryParameters</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  All query parameters with all values preserved.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="raw" class="property">
+  <span class="name"><a href="../netto/CtxRequest/raw.html">raw</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span>
+  
+
+</dt>
+<dd>
+  Access to the underlying <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a>.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="remoteAddress" class="property">
+  <span class="name"><a href="../netto/CtxRequest/remoteAddress.html">remoteAddress</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-io/InternetAddress-class.html">InternetAddress</a>?</span>
+  
+
+</dt>
+<dd>
+  Remote address associated with the underlying socket, if available.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="uri" class="property">
+  <span class="name"><a href="../netto/CtxRequest/uri.html">uri</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Uri-class.html">Uri</a></span>
+  
+
+</dt>
+<dd>
+  Full request URI including query parameters.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="userAgent" class="property">
+  <span class="name"><a href="../netto/CtxRequest/userAgent.html">userAgent</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  
+
+</dt>
+<dd>
+  Reported user agent string, if provided.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="accepts" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/accepts.html">accepts</a></span><span class="signature">(<wbr><span class="parameter" id="accepts-param-mime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">mime</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns true if the <code>Accept</code> header allows the provided <code>mime</code> type.
+  
+
+</dd>
+
+        <dt id="bestMatch" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/bestMatch.html">bestMatch</a></span><span class="signature">(<wbr><span class="parameter" id="bestMatch-param-mimes"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">mimes</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the best match from <code>mimes</code> based on Accept (very small impl).
+If no Accept header, returns the first offered.
+  
+
+</dd>
+
+        <dt id="contains" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/contains.html">contains</a></span><span class="signature">(<wbr><span class="parameter" id="contains-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Whether a value exists for <code>key</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="cookie" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/cookie.html">cookie</a></span><span class="signature">(<wbr><span class="parameter" id="cookie-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Looks up a cookie value by <code>name</code>, if present.
+  
+
+</dd>
+
+        <dt id="get" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/get.html">get</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="get-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; T?</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Retrieves a typed value for <code>key</code> if present.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="getOrPut" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/getOrPut.html">getOrPut</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getOrPut-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="getOrPut-param-ifAbsent"><span class="type-annotation">T</span> <span class="parameter-name">ifAbsent</span>()</span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Returns a typed value for <code>key</code>, computing and storing it when absent.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="header" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/header.html">header</a></span><span class="signature">(<wbr><span class="parameter" id="header-param-name"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  </span>
+  
+
+</dt>
+<dd>
+  First value of a header (case-insensitive) or null.
+  
+
+</dd>
+
+        <dt id="hijack" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/hijack.html">hijack</a></span><span class="signature">(<wbr><span class="parameter" id="hijack-param-callback"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-async/FutureOr-class.html">FutureOr</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span> <span class="parameter-name">callback</span>(<span class="parameter" id="param-request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">request</span></span>)</span>)
+    <span class="returntype parameter">&#8594; Never</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Hands control of the underlying <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a> to <code>callback</code>.
+  
+
+</dd>
+
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="pathParameter" class="callable">
+  <span class="name"><a href="../netto/CtxRequest/pathParameter.html">pathParameter</a></span><span class="signature">(<wbr><span class="parameter" id="pathParameter-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Retrieves a path parameter based on a key.
+In case, no path parameter is available, it returns an empty string.
+  
+
+</dd>
+
+        <dt id="remove" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/remove.html">remove</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="remove-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; T?</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Removes and returns the value stored at <code>key</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="require" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/require.html">require</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="require-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
+    <span class="returntype parameter">&#8594; T</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Retrieves a typed value for <code>key</code> or throws if it is missing.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="set" class="callable inherited">
+  <span class="name"><a href="../netto/CtxRequest/set.html">set</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="set-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="set-param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Stores <code>value</code> under <code>key</code>.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">netto</a></li>
+    <li><a href="../netto/">netto</a></li>
+    <li class="self-crumb">CtxRequest class</li>
+</ol>
+
+    <h5>netto library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    netto
+      0.1.2
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

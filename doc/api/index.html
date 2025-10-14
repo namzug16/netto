@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="netto API docs, for the Dart programming language.">
+  <title>netto - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">netto package</li>
+  </ol>
+  <div class="self-name">netto</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="netto">Netto</h1>
+<pre class="language-dart"><code>    _   __     __  __      
+   / | / /__  / /_/ /_____ 
+  /  |/ / _ \/ __/ __/ __ \
+ / /|  /  __/ /_/ /_/ /_/ /
+/_/ |_/\___/\__/\__/\____/ 
+
+A minimal, flexible, composable, and neat web framework for Dart.
+</code></pre>
+<p>Netto is a web framework whose goal is to give you the lightest
+possible foundation for building feature-rich web servers and applications. It
+sticks closely to the <code>dart:io</code> library, adding zero hard wrappers,
+and no file system based routing conventions.
+Inspired by the ergonomics of <a href="https://echo.labstack.com/">Echo</a> in
+the Go ecosystem, Netto keeps out of your way so you can structure your server
+however you want.</p>
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li><strong>Familiar <code>dart:io</code> surface</strong> - Work with the primitives you already know:
+<code>HttpServer</code>, <code>HttpRequest</code>, and <code>HttpResponse</code>.</li>
+<li><strong>Composable middleware</strong> - Chain functions with <code>use</code> to add logging,
+authentication, or any custom behavior at either the app or group level.</li>
+<li><strong>Typed context storage</strong> - Pass data between middleware and handlers using a
+per-request <code>Ctx</code> with helpers like <code>set</code>, <code>get</code>, and <code>require</code>.</li>
+<li><strong>First-class responses</strong> - Write strings, JSON, or take over the response
+stream directly; Netto never hides the socket from you.</li>
+<li><strong>Centralized error handling</strong> - Configure an app-wide error handler to
+produce consistent responses and logging from a single place.</li>
+<li><strong>Radix-tree router</strong> - Netto's router is backed by a fast, prefix-based
+radix tree with support for route groups, named parameters, and all standard
+HTTP methods.</li>
+</ul>
+<h2 id="quick-start">Quick start</h2>
+<pre class="language-dart"><code class="language-dart">import "dart:io";
+
+import "package:netto/netto.dart";
+
+Future&lt;void&gt; main() async {
+  final app = Netto()
+    ..use(logger())
+    ..get("/", (ctx) =&gt; ctx.response.string("Hello, Netto!"))
+    ..get("/ping", (ctx) =&gt; ctx.response.json({"pong": DateTime.now().toIso8601String()}));
+
+  await app.serve(InternetAddress.loopbackIPv4, 8080);
+}
+</code></pre>
+<p>Add more routes by calling <code>get</code>, <code>post</code>, or group them with <code>group</code>.
+Middlewares run in the order they are registered (globally scoped or group scoped), so you can build your own stack
+for logging, authorization, caching, and beyond.</p>
+<h3 id="example-using-htmdart-and-htmx">Example using Htmdart and Htmx</h3>
+<pre class="language-dart"><code class="language-dart">import "dart:io";
+
+import "package:htmdart/htmdart.dart";
+import "package:netto/netto.dart";
+
+Future&lt;void&gt; main() async {
+  final app = Netto()
+    ..get(
+      "/",
+      (ctx) =&gt; ctx.response.html(
+        html([
+          head([
+            script([
+              $src("https://unpkg.com/htmx.org@2.0.4"),
+            ]),
+          ]),
+          body([
+            h1(["Hello from htmdart + Netto".t]),
+            button([
+              $hx.post("/clicked"),
+              $hx.target("#container"),
+              "Click me".t,
+            ]),
+            div([$id("container")]),
+          ]),
+        ]).toHtml(),
+      ),
+    )
+    ..post(
+      "/clicked",
+      (ctx) =&gt; ctx.response.html(
+        div([
+          $id("container"),
+          "Button clicked at ${DateTime.now()}".t,
+        ]).toHtml(),
+      ),
+    );
+
+  await app.serve(InternetAddress.anyIPv4, 8080);
+}
+</code></pre>
+<h2 id="next-steps">Next steps</h2>
+<p>This README is intentionally light. Detailed guides, patterns, and API
+explanations will live in the documentation site we are building next. Until
+then, explore the examples in the <a href="https://github.com/namzug16/netto/tree/master/example">examples/</a> directory and experiment with
+Netto to see how it fits your projects.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="netto">
+  <span class="name"><a href="netto/">netto</a></span> 
+
+</dt>
+<dd>Netto
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">netto package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">netto</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="netto/">netto</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    netto
+      0.1.2
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
