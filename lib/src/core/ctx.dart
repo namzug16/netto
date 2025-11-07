@@ -8,8 +8,8 @@ import "package:netto/src/core/ctx_response.dart";
 class Ctx with CtxExtrasAccessors {
   /// Creates a context wrapper for an [HttpRequest] and related response.
   Ctx(HttpRequest request) : extras = <String, Object?>{} {
-    this.request = CtxRequest(request, extras: extras);
-    response = CtxResponse(request, extras: extras);
+    this.request = CtxRequest(request);
+    response = CtxResponse(request);
   }
 
   /// Mutable bag for sharing data between middleware and handlers.

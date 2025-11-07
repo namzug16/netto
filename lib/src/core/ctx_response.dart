@@ -2,21 +2,14 @@ import "dart:convert";
 import "dart:io";
 
 import "package:meta/meta.dart";
-import "package:netto/src/core/ctx_extras.dart";
 
 /// Response helper that tracks outgoing data and exposes the shared extras
 /// map used by middleware and handlers.
-class CtxResponse with CtxExtrasAccessors {
+class CtxResponse {
   /// Creates a response helper bound to the provided [HttpRequest].
-  CtxResponse(this._request, {Map<String, Object?>? extras}) : _extras = extras ?? <String, Object?>{};
+  CtxResponse(this._request);
 
   final HttpRequest _request;
-  final Map<String, Object?> _extras;
-
-  /// Shared extras map. Prefer using helpers such as [set] and [get] to
-  /// interact with it.
-  @override
-  Map<String, Object?> get extras => _extras;
 
   /// Mutable headers for the pending response.
   HttpHeaders get headers => _request.response.headers;

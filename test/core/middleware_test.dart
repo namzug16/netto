@@ -26,14 +26,15 @@ void main() {
     Future<void> base(Ctx ctx) async {
       calls.add("handler");
       expect(ctx.require<int>("counter"), 2);
-      expect(ctx.response.require<String>("note"), "set in middleware");
+      expect(ctx.require<String>("note"), "set in middleware");
     }
 
     Future<Future<Null> Function(Ctx ctx)> m1(Handler next) async {
       return (Ctx ctx) async {
         calls.add("m1");
-        ctx.set<int>("counter", 1);
-        ctx.response.set<String>("note", "set in middleware");
+        ctx
+          ..set<int>("counter", 1)
+          ..set<String>("note", "set in middleware");
         await next(ctx);
       };
     }
@@ -41,8 +42,8 @@ void main() {
     Future<Future<Null> Function(Ctx ctx)> m2(Handler next) async {
       return (Ctx ctx) async {
         calls.add("m2");
-        final current = ctx.request.get<int>("counter") ?? 0;
-        ctx.request.set<int>("counter", current + 1);
+        final current = ctx.get<int>("counter") ?? 0;
+        ctx.set<int>("counter", current + 1);
         await next(ctx);
       };
     }

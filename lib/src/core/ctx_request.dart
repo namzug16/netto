@@ -2,32 +2,23 @@ import "dart:async";
 import "dart:io";
 
 import "package:meta/meta.dart";
-import "package:netto/src/core/ctx_extras.dart";
 import "package:netto/src/core/ctx_request_body.dart";
 import "package:netto/src/core/hijack_exception.dart";
 
 /// Wrapper around [HttpRequest] offering convenient access to request data
 /// and the shared contextual extras map.
-class CtxRequest with CtxExtrasAccessors {
+class CtxRequest {
   /// Creates a wrapper around the incoming [HttpRequest].
   CtxRequest(
     this._request, {
     bool enableHijack = true,
-    Map<String, Object?>? extras,
-  }) : _canHijack = enableHijack,
-       _extras = extras ?? <String, Object?>{} {
+  }) : _canHijack = enableHijack {
     body = CtxRequestBody(this, _request);
   }
 
   final HttpRequest _request;
   final bool _canHijack;
   bool _hijacked = false;
-  final Map<String, Object?> _extras;
-
-  /// Shared extras map. Prefer using helpers such as [set] and [get] to
-  /// interact with it.
-  @override
-  Map<String, Object?> get extras => _extras;
 
   /// Populated by the router via [updatePathParameters].
   Map<String, String> get pathParameters => _pathParameters;

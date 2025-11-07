@@ -19,20 +19,6 @@ class _FakeHttpRequest extends Fake implements HttpRequest {
 
 void main() {
   group("Ctx extras", () {
-    test("Given extras stored on ctx "
-        "When accessed via request and response "
-        "Then the same values are visible", () {
-      final ctx = Ctx(_FakeHttpRequest())..set<String>("greeting", "hello");
-      expect(ctx.request.require<String>("greeting"), "hello");
-
-      ctx.request.set<int>("counter", 1);
-      expect(ctx.response.require<int>("counter"), 1);
-
-      expect(ctx.contains("greeting"), isTrue);
-      expect(ctx.remove<String>("greeting"), "hello");
-      expect(ctx.get<String>("greeting"), isNull);
-    });
-
     test("Given a value generated through getOrPut "
         "When accessed multiple times "
         "Then the generator is only invoked once", () {
@@ -64,8 +50,7 @@ void main() {
     test("Given an extras value with a different type "
         "When get is invoked "
         "Then a StateError is thrown", () {
-      final ctx = Ctx(_FakeHttpRequest());
-      ctx.set<String>("value", "text");
+      final ctx = Ctx(_FakeHttpRequest())..set<String>("value", "text");
 
       expect(() => ctx.get<int>("value"), throwsStateError);
     });
@@ -73,8 +58,7 @@ void main() {
     test("Given a nullable extras value "
         "When require requests a non-nullable type "
         "Then a StateError is thrown", () {
-      final ctx = Ctx(_FakeHttpRequest());
-      ctx.set<String?>("nullable", null);
+      final ctx = Ctx(_FakeHttpRequest())..set<String?>("nullable", null);
 
       expect(() => ctx.require<String>("nullable"), throwsStateError);
       expect(ctx.require<String?>("nullable"), isNull);
