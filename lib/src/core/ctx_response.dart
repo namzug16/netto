@@ -200,6 +200,14 @@ class CtxResponse {
 
   // }}}
 
+  /// Adds a [Cookie] to the current HTTP response.
+  ///
+  /// This method attaches the given [cookie] to the response,
+  /// making it available to the client in subsequent requests.
+  void setCookie(Cookie cookie) {
+    _request.response.cookies.add(cookie);
+  }
+
   @internal
   /// Prevents any response body from being written (used for HEAD requests).
   void suppressBody() {
