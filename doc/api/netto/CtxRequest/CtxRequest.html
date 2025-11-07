@@ -56,7 +56,6 @@
       
       <span class="name ">CtxRequest</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="-param-_request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">_request</span>, {</span></li>
 <li><span class="parameter" id="-param-enableHijack"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">enableHijack</span> = <span class="default-value">true</span>, </span></li>
-<li><span class="parameter" id="-param-extras"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">extras</span>, </span></li>
 </ol>})
     </section>
     
@@ -71,9 +70,7 @@
   <pre class="language-dart"><code class="language-dart">CtxRequest(
   this._request, {
   bool enableHijack = true,
-  Map&lt;String, Object?&gt;? extras,
-}) : _canHijack = enableHijack,
-     _extras = extras ?? &lt;String, Object?&gt;{} {
+}) : _canHijack = enableHijack {
   body = CtxRequestBody(this, _request);
 }</code></pre>
 </section>
@@ -103,7 +100,7 @@
 <footer>
   <span class="no-break">
     netto
-      0.1.2
+      0.1.3
   </span>
   
 </footer>

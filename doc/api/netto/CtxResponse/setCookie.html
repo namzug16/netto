@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the add method from the Group class, for the Dart programming language.">
-  <title>add method - Group class - netto library - Dart API</title>
+  <meta name="description" content="API docs for the setCookie method from the CtxResponse class, for the Dart programming language.">
+  <title>setCookie method - CtxResponse class - netto library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">netto</a></li>
     <li><a href="../../netto/">netto.dart</a></li>
-    <li><a href="../../netto/Group-class.html">Group</a></li>
-    <li class="self-crumb">add method</li>
+    <li><a href="../../netto/CtxResponse-class.html">CtxResponse</a></li>
+    <li class="self-crumb">setCookie method</li>
   </ol>
-  <div class="self-name">add</div>
+  <div class="self-name">setCookie</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -46,40 +46,34 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="netto&#47;Group-class-sidebar.html"
+    data-above-sidebar="netto&#47;CtxResponse-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">add</span> method 
+<h1><span class="kind-method">setCookie</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
-    </ol>
-  </div>
 <span class="returntype">void</span>
-<span class="name ">add</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="add-param-verb"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">verb</span>, </span></li>
-<li><span class="parameter" id="add-param-route"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">route</span>, </span></li>
-<li><span class="parameter" id="add-param-handler"><span class="type-annotation"><a href="../../netto/Handler.html">Handler</a></span> <span class="parameter-name">handler</span></span></li>
+<span class="name ">setCookie</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="setCookie-param-cookie"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/Cookie-class.html">Cookie</a></span> <span class="parameter-name">cookie</span></span></li>
 </ol>)
 
-      <div class="features"><span class="feature">override</span></div>
+      
 
     </section>
     
 <section class="desc markdown">
-  <p>Registers a handler inside the group's prefix.</p>
+  <p>Adds a <a href="https://api.flutter.dev/flutter/dart-io/Cookie-class.html">Cookie</a> to the current HTTP response.</p>
+<p>This method attaches the given <code>cookie</code> to the response,
+making it available to the client in subsequent requests.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@override
-void add(String verb, String route, Handler handler) {
-  super.add(verb, [?prefix, route].join(), handler);
+  <pre class="language-dart"><code class="language-dart">void setCookie(Cookie cookie) {
+  _request.response.cookies.add(cookie);
 }</code></pre>
 </section>
 
@@ -95,11 +89,11 @@ void add(String verb, String route, Handler handler) {
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">netto</a></li>
     <li><a href="../../netto/">netto</a></li>
-    <li><a href="../../netto/Group-class.html">Group</a></li>
-    <li class="self-crumb">add method</li>
+    <li><a href="../../netto/CtxResponse-class.html">CtxResponse</a></li>
+    <li class="self-crumb">setCookie method</li>
 </ol>
 
-    <h5>Group class</h5>
+    <h5>CtxResponse class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

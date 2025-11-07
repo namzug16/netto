@@ -65,7 +65,7 @@ map used by middleware and handlers.</p>
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="CtxResponse.new" class="callable">
-          <span class="name"><a href="../netto/CtxResponse/CtxResponse.html">CtxResponse.new</a></span><span class="signature">(<span class="parameter" id="-param-_request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">_request</span>, {</span><span class="parameter" id="-param-extras"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">extras</span></span>})</span>
+          <span class="name"><a href="../netto/CtxResponse/CtxResponse.html">CtxResponse.new</a></span><span class="signature">(<span class="parameter" id="-param-_request"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a></span> <span class="parameter-name">_request</span></span>)</span>
         </dt>
         <dd>
           Creates a response helper bound to the provided <a href="https://api.flutter.dev/flutter/dart-io/HttpRequest-class.html">HttpRequest</a>.
@@ -86,19 +86,6 @@ map used by middleware and handlers.</p>
 </dt>
 <dd>
   Returns the length of the buffered response body, if any.
-  <div class="features"><span class="feature">no setter</span></div>
-
-</dd>
-
-        <dt id="extras" class="property">
-  <span class="name"><a href="../netto/CtxResponse/extras.html">extras</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  Shared extras map. Prefer using helpers such as <code>set</code> and <code>get</code> to
-interact with it.
   <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
@@ -223,19 +210,6 @@ interact with it.
 
 </dd>
 
-        <dt id="contains" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/contains.html">contains</a></span><span class="signature">(<wbr><span class="parameter" id="contains-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  Whether a value exists for <code>key</code>.
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
         <dt id="created" class="callable">
   <span class="name"><a href="../netto/CtxResponse/created.html">created</a></span><span class="signature">(<wbr><span class="parameter" id="created-param-location"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">location</span>, {</span><span class="parameter" id="created-param-jsonBody"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a>?</span> <span class="parameter-name">jsonBody</span>, </span><span class="parameter" id="created-param-textBody"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">textBody</span></span>})
     <span class="returntype parameter">&#8594; void</span>
@@ -286,32 +260,6 @@ Provide either <code>jsonBody</code> or <code>textBody</code>, not both.
 <dd>
   Sends a 302 redirect to <code>location</code>.
   
-
-</dd>
-
-        <dt id="get" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/get.html">get</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="get-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
-    <span class="returntype parameter">&#8594; T?</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  Retrieves a typed value for <code>key</code> if present.
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="getOrPut" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/getOrPut.html">getOrPut</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="getOrPut-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="getOrPut-param-ifAbsent"><span class="type-annotation">T</span> <span class="parameter-name">ifAbsent</span>()</span>)
-    <span class="returntype parameter">&#8594; T</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  Returns a typed value for <code>key</code>, computing and storing it when absent.
-  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -445,32 +393,6 @@ Provide either <code>jsonBody</code> or <code>textBody</code>, not both.
 
 </dd>
 
-        <dt id="remove" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/remove.html">remove</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="remove-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
-    <span class="returntype parameter">&#8594; T?</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  Removes and returns the value stored at <code>key</code>.
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="require" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/require.html">require</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="require-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span></span>)
-    <span class="returntype parameter">&#8594; T</span>
-  </span>
-  
-
-</dt>
-<dd class="inherited">
-  Retrieves a typed value for <code>key</code> or throws if it is missing.
-  <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
         <dt id="seeOther" class="callable">
   <span class="name"><a href="../netto/CtxResponse/seeOther.html">seeOther</a></span><span class="signature">(<wbr><span class="parameter" id="seeOther-param-location"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">location</span></span>)
     <span class="returntype parameter">&#8594; void</span>
@@ -484,16 +406,16 @@ Provide either <code>jsonBody</code> or <code>textBody</code>, not both.
 
 </dd>
 
-        <dt id="set" class="callable inherited">
-  <span class="name"><a href="../netto/CtxResponse/set.html">set</a></span><span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span><span class="signature">(<wbr><span class="parameter" id="set-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">key</span>, </span><span class="parameter" id="set-param-value"><span class="type-annotation">T</span> <span class="parameter-name">value</span></span>)
+        <dt id="setCookie" class="callable">
+  <span class="name"><a href="../netto/CtxResponse/setCookie.html">setCookie</a></span><span class="signature">(<wbr><span class="parameter" id="setCookie-param-cookie"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-io/Cookie-class.html">Cookie</a></span> <span class="parameter-name">cookie</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd class="inherited">
-  Stores <code>value</code> under <code>key</code>.
-  <div class="features"><span class="feature">inherited</span></div>
+<dd>
+  Adds a <a href="https://api.flutter.dev/flutter/dart-io/Cookie-class.html">Cookie</a> to the current HTTP response.
+  
 
 </dd>
 
@@ -625,7 +547,7 @@ Provide either <code>jsonBody</code> or <code>textBody</code>, not both.
 <footer>
   <span class="no-break">
     netto
-      0.1.2
+      0.1.3
   </span>
   
 </footer>
