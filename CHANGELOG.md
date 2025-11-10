@@ -1,3 +1,8 @@
+## 0.1.4
+
+- fix: `ctx.request.queryParameters` returns `uri.queryParametersAll`
+- feat: add `ctx.request.queryParametersAll`
+
 ## 0.1.3
 
 - feat: add `setCookie` to `CtxResponse`
