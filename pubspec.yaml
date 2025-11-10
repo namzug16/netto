@@ -1,6 +1,6 @@
 name: netto
 description: A minimal, flexible, composable, and neat web framework for Dart.
-version: 0.1.3
+version: 0.1.4
 repository: https://github.com/namzug16/netto
 
 environment:
