@@ -271,10 +271,8 @@ String _resolveTag(String tag, LoggerConfig config, LoggerEvent event) {
       }
       if (tag.startsWith("query:")) {
         final name = tag.substring("query:".length);
-        final values = event.ctx.request.queryParameters[name];
-        return _sanitizeString(
-          values == null || values.isEmpty ? "" : values.first,
-        );
+        final value = event.ctx.request.queryParameters[name];
+        return _sanitizeString(value ?? "");
       }
       if (tag.startsWith("cookie:")) {
         final name = tag.substring("cookie:".length);
