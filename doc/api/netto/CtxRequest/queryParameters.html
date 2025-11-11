@@ -59,7 +59,7 @@
   <section id="getter">
     <section class="multi-line-signature">
       
-      <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
+      <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
       get
       <span class="name ">queryParameters</span>
       
@@ -67,13 +67,24 @@
     </section>
     
 <section class="desc markdown">
-  <p>All query parameters with all values preserved.</p>
+  <p>The URI query split into a map according to the rules
+specified for FORM post in the <a href="https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.4" title="HTML 4.01 section 17.13.4">HTML 4.01 specification section
+17.13.4</a>.</p>
+<p>Each key and value in the resulting map has been decoded.
+If there is no query, the empty map is returned.</p>
+<p>Keys in the query string that have no value are mapped to the
+empty string.
+If a key occurs more than once in the query string, it is mapped to
+an arbitrary choice of possible value.
+The <a href="../../netto/CtxRequest/queryParametersAll.html">queryParametersAll</a> getter can provide a map
+that maps keys to all of their values.</p>
+<p>The map is unmodifiable.</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Map&lt;String, List&lt;String&gt;&gt; get queryParameters =&gt; Map.unmodifiable(_request.uri.queryParametersAll);</code></pre>
+  <pre class="language-dart"><code class="language-dart">Map&lt;String, String&gt; get queryParameters =&gt; _request.uri.queryParameters;</code></pre>
 </section>
 
   </section>
@@ -103,7 +114,7 @@
 <footer>
   <span class="no-break">
     netto
-      0.1.3
+      0.1.5
   </span>
   
 </footer>

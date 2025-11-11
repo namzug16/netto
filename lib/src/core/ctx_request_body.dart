@@ -224,8 +224,7 @@ class CtxRequestBody {
   ///  - 415 if content-type isn’t form (unless `allowBestEffort` true and body empty).
   Future<String?> formValue(String name, {bool allowBestEffort = false}) async {
     final fields = await formFields(allowBestEffort: allowBestEffort);
-    final vals = fields[name];
-    return (vals == null || vals.isEmpty) ? null : vals.first;
+    return fields.get(name);
   }
 
   /// Returns all values for `name` from form fields. Empty list if missing.
@@ -264,15 +263,15 @@ class CtxRequestBody {
   }
 
   /// Returns all fields (merged); for urlencoded there are no files.
-  Future<Map<String, List<String>>> formFields({
+  Future<FormDataFields> formFields({
     bool allowBestEffort = false,
   }) async {
     final data = await _ensureParsedForm(
       _request,
       allowBestEffort: allowBestEffort,
     );
-    // return as an unmodifiable map to prevent accidental mutation by callers
-    return UnmodifiableMapView(data.fields);
+
+    return data.fields;
   }
 
   /// Full access when you actually need both fields & files together.
@@ -383,7 +382,7 @@ class CtxRequestBody {
     }
 
     if (_ctxRequest.isFormUrlencoded) {
-      final fields = await formUrlencoded();
+      final fields = FormDataFields(await formUrlencoded());
       final data = FormData(fields: fields, files: []);
       _formCache[req] = _FormCache(data, false, null);
       if (requireMultipart) {
@@ -404,7 +403,7 @@ class CtxRequestBody {
           throw HttpException(415, "Unsupported Content-Type for form parsing");
         }
       }
-      final data = FormData(fields: const {}, files: []);
+      final data = FormData(fields: FormDataFields(const {}), files: []);
       _formCache[req] = _FormCache(data, false, null);
       if (requireMultipart) {
         throw HttpException(415, "Request is not multipart/form-data");

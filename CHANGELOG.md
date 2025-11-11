@@ -1,3 +1,7 @@
+## 0.1.5
+
+- feat: add `FormDataFields` extension type
+
 ## 0.1.4
 
 - fix: `ctx.request.queryParameters` returns `uri.queryParametersAll`

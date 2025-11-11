@@ -75,10 +75,10 @@ class UploadedFile {
 /// Aggregated multipart form result.
 class FormData {
   /// Creates an aggregate of parsed multipart form fields and uploaded files.
-  FormData({Map<String, List<String>>? fields, List<UploadedFile>? files}) : fields = fields ?? <String, List<String>>{}, files = files ?? <UploadedFile>[];
+  FormData({FormDataFields? fields, List<UploadedFile>? files}) : fields = fields ?? FormDataFields(<String, List<String>>{}), files = files ?? <UploadedFile>[];
 
   /// Text fields: name → list of values (multi-value support).
-  final Map<String, List<String>> fields;
+  final FormDataFields fields;
 
   /// Uploaded files.
   final List<UploadedFile> files;
@@ -86,5 +86,34 @@ class FormData {
   /// Adds [value] to the list of values for [name].
   void addField(String name, String value) {
     (fields[name] ??= <String>[]).add(value);
+  }
+}
+
+/// Wrapper around `Map<String, List<String>>`
+/// representing form fields, such as those parsed from
+/// `application/x-www-form-urlencoded` or `multipart/form-data` requests.
+///
+/// This extension type provides convenient access to field values,
+/// while still exposing the full `Map` interface.
+extension type FormDataFields(Map<String, List<String>> map) implements Map<String, List<String>> {
+  /// Returns the **first value** associated with the given [key],
+  /// or `null` if the field is missing or has no values.
+  ///
+  /// This is a convenience method for when form fields contain
+  /// a single value, such as:
+  ///
+  /// ```dart
+  /// final name = fields.get('name');
+  /// ```
+  ///
+  /// If a field contains multiple values, only the first one is returned.
+  /// To access all values, use the map directly:
+  ///
+  /// ```dart
+  /// final allNames = fields['name'];
+  /// ```
+  String? get(String key) {
+    final vals = map[key];
+    return (vals == null || vals.isEmpty) ? null : vals.first;
   }
 }
