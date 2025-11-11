@@ -170,6 +170,34 @@ void main() {
       expect(json["values"], ["first", "second"]);
     });
 
+    test("Given form urlencoded data "
+        "When parsed "
+        "Then helpers expose single and all field's values", () async {
+      router.post("/body/form", (Ctx ctx) async {
+        final fields = await ctx.request.body.formFields();
+        final single = fields.get("name");
+        final values = fields["name"];
+
+        ctx.response.json({
+          "single": single,
+          "values": values,
+        });
+      });
+
+      final res = await request(
+        "POST",
+        "/body/form",
+        headers: {
+          HttpHeaders.contentTypeHeader: "application/x-www-form-urlencoded; charset=utf-8",
+        },
+        body: "name=first&name=second",
+      );
+
+      final json = jsonDecode(res.body) as Map<String, dynamic>;
+      expect(json["single"], "first");
+      expect(json["values"], ["first", "second"]);
+    });
+
     test("Given an empty body without content type "
         "When parsed best effort "
         "Then it returns empty fields", () async {

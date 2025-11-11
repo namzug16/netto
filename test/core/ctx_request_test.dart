@@ -167,7 +167,7 @@ void main() {
         ctx.response.json({
           "method": ctx.request.method,
           "path": ctx.request.path,
-          "query": ctx.request.queryParameters,
+          "query": ctx.request.queryParametersAll,
           "host": ctx.request.host,
           "userAgent": ctx.request.userAgent,
           "headerLower": first.containsKey("x-test"),

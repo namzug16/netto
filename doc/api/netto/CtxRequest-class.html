@@ -272,12 +272,28 @@ and the shared contextual extras map.</p>
 
         <dt id="queryParameters" class="property">
   <span class="name"><a href="../netto/CtxRequest/queryParameters.html">queryParameters</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  The URI query split into a map according to the rules
+specified for FORM post in the <a href="https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.4" title="HTML 4.01 section 17.13.4">HTML 4.01 specification section
+17.13.4</a>.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="queryParametersAll" class="property">
+  <span class="name"><a href="../netto/CtxRequest/queryParametersAll.html">queryParametersAll</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>&gt;</span></span>
   
 
 </dt>
 <dd>
-  All query parameters with all values preserved.
+  Returns the URI query split into a map according to the rules
+specified for FORM post in the <a href="https://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13.4" title="HTML 4.01 section 17.13.4">HTML 4.01 specification section
+17.13.4</a>.
   <div class="features"><span class="feature">no setter</span></div>
 
 </dd>
@@ -507,7 +523,7 @@ In case, no path parameter is available, it returns an empty string.
 <footer>
   <span class="no-break">
     netto
-      0.1.3
+      0.1.5
   </span>
   
 </footer>
